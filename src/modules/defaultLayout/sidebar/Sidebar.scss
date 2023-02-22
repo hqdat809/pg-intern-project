@@ -1,0 +1,104 @@
+@import '../../../scss/variable';
+
+.sidebar-container{
+    width: $sidebarWidth;
+    height: calc(100% - #{$headerHeight});
+    position: fixed;
+    left: 0;
+    z-index: 10;
+    background-color: $primaryColor;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: width 0.5s;
+    box-shadow: 0 0.5rem 1rem 0 #1a1f33;
+
+    &.sidebar-container-toggle{
+        width: $sidebarWidthToggle;
+    }
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+    
+    &::-webkit-scrollbar {
+        height: 10px;
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $black;
+        cursor: pointer;
+        border-radius: 0.15625rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $primaryColor;
+        border-radius: 3px;
+    }
+}
+
+// MAIN MENU
+.list-main-menu{
+    .item-main-menu{
+        border-bottom: 1px solid $bgPurpleDark;
+        padding: 15px 20px 15px 30px;
+        cursor: pointer;
+        &:hover{
+            .text-main-menu{
+                transition: 0.5s;
+                color: $purpleLight;
+            }
+        }
+        &:last-child{
+            border: none;
+        }
+        .text-main-menu{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            .left{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                .text-main{
+                    text-transform: capitalize;
+                    &.hide{
+                        display: none;
+                        transition: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// SUB MENU
+.list-sub-menu{
+    display: none;
+    &.show{
+        display: block;
+    }
+    &.hide{
+        display: none !important;
+    }
+    .item-sub-menu{
+        border-top: 1px solid $bgPurpleDark;
+        padding: 15px 0 0 30px;
+        margin-top: 10px;
+        &:hover{
+            .text-sub-menu{
+                color: $purpleLight;
+                transition: 0.5s;
+            }
+        }
+        .text-sub-menu{
+            color: white;
+            text-transform: capitalize;
+            &.active{
+                color: $purpleLight;
+            }
+        }
+    }
+}
+

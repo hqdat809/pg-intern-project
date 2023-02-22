@@ -1,0 +1,96 @@
+// ------------------------------------ FILTER ----------------------------------
+.filter{
+    position: relative;
+    background-color: $primaryColor;
+    border: 1px solid $black;
+    .btn-toggle-filter{
+        cursor: pointer;
+        display: block;
+        background-color: $primaryColor;
+        position: absolute;
+        bottom: -21px;
+        left: 50%;
+        height: 21px;
+        width: 58px;
+        text-align: center;
+        border: 1px solid $black;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+    }
+}
+
+.filter-show{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    // flex-wrap: wrap;
+    gap: 10px;
+    .btn-search{
+        display: block;
+        color: white;
+        background-color: $purpleLight;
+        border-radius: 5px;
+        text-align: center;
+        max-width: 100px;
+        padding: 7px;
+        cursor: pointer;
+        &:hover{
+            color: $black;
+        }
+    }
+}
+
+.filter-hide{
+    display: none;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-top: 1px solid $black;
+    &.show{
+        display: flex;
+    }
+    .filter-left{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .filter-right{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .list-radio{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .filter-date{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+    }
+}
+
+.filter-checkbox{
+  display: flex;
+  gap: 10px;
+  .list-checkbox{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .checkbox{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 1014px) {
+    .filter-show{
+        flex-wrap: wrap;
+    }
+}
